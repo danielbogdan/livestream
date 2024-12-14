@@ -1,0 +1,80 @@
+services:
+  db:
+    image: mariadb:10.3
+    container_name: frontend-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: live
+      MYSQL_USER: live
+      MYSQL_PASSWORD: Magpass@99!
+    volumes:
+      - ./frontend-app/mysql-data:/var/lib/mysql
+    restart: always
+    networks:
+      - shared-network
+
+  app:
+    build:
+      context: ./frontend-app
+      dockerfile: Dockerfile
+    container_name: frontend-app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./frontend-app/app:/var/www/html
+      - ./frontend-app/certs:/etc/ssl/private
+      - ./frontend-app/apache-conf/ssl.conf:/etc/apache2/sites-available/ssl.conf
+      - ./frontend-app/logs:/var/log
+      - ./frontend-app/php.ini:/usr/local/etc/php/php.ini
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_DATABASE=live
+      - MYSQL_USER=live
+      - MYSQL_PASSWORD=Magpass@99!
+    depends_on:
+      - db
+    restart: always
+    networks:
+      - shared-network
+
+  rtmp:
+    build:
+      context: ./backend-app/rtmp
+      dockerfile: Dockerfile
+    container_name: rtmp-server
+    ports:
+      - "1935:1935"
+      - "8080:8080"
+    volumes:
+      - ./backend-app/shared-data:/mnt/shared-data
+      - ./backend-app/video:/mnt/livestream
+      - ./backend-app/errors:/mnt/status
+    depends_on:
+      - app
+    networks:
+      - shared-network
+
+  api:
+    build:
+      context: ./backend-app/api
+    container_name: api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend-app/shared-data:/mnt/shared-data
+      - ./backend-app/api/api.php:/var/www/html/api.php
+      - /var/run/docker.sock:/var/run/docker.sock # Mount Docker socket
+    networks:
+      - shared-network
+    depends_on:
+      - rtmp
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock # Configure Docker Host
+    user: root
+
+networks:
+  shared-network:
+    external: true

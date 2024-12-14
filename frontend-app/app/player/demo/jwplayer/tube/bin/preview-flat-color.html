@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tube Skin Retina for JW7</title>
+	<link href="./skins/tube.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color: #d2d1d0;">
+<center class="player-wrapper">
+	<div id="my_video"></div>
+	<br/>
+	<input type="Button" onclick="switchColor('#1abc9c','#16a085');" value="Green" style="background-color: #1abc9c;"> 
+	<input type="Button" onclick="switchColor('#2ecc71','#27ae60');" value="Teal" style="background-color: #2ecc71;"> 
+	<input type="Button" onclick="switchColor('#3498db','#2980b9');" value="Blue" style="background-color: #3498db;"> 
+	<input type="Button" onclick="switchColor('#f1c40f','#f39c12');" value="Yellow" style="background-color: #f1c40f;"> 
+	<input type="Button" onclick="switchColor('#f39c12','#e67e22');" value="Orange" style="background-color: #f39c12;"> 
+	<input type="Button" onclick="switchColor('#e67e22','#d35400');" value="Carrot" style="background-color: #e67e22;"> 
+	<input type="Button" onclick="switchColor('#e74c3c','#c0392b');" value="Red" style="background-color: #e74c3c;"> 
+	<input type="Button" onclick="switchColor('#9b59b6','#8e44ad');" value="Purple" style="background-color: #9b59b6;"> 
+</center>
+
+<script type="text/javascript" src="./jwplayer-7.11.0/jwplayer.js"></script>
+<script type="text/javascript">
+	//Note: JW Player 7 now requires a license key. Please make sure to include this on your page if you are self-hosting.
+	jwplayer.key = "Ywok59g9j93GtuSU7+axNzjIp/TBfiK4s0vvYg==";
+	
+	var color_active = "#1abc9c";
+	var color_inactive = "#16a085";
+	
+	function switchColor(_active,_inactive) {
+		color_active = _active;
+		color_inactive = _inactive;
+		setup();
+	};
+	
+	function setup() {
+		jwplayer('my_video').setup({
+			playlist: "http://content.jwplatform.com/feeds/13ShtP5m.rss",
+			width: 640,
+			height: 360,
+			autostart: true,
+			skin: {
+				name: "tube",
+				active: color_active,
+				inactive: color_inactive
+			},
+			timeSliderAbove: true,
+		});
+	}
+	setup();
+</script>
+
+</body>
+</html>

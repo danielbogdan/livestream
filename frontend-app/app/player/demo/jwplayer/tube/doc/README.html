@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tube Skin Retina for JW7</title>
+<style>
+    body { padding: 50px 100px; width: 900px; font: 13px/20px Arial; background: #FFF; }
+    a , h1, h2{ color: #369; }
+    h1 { font-size: 32px; }
+    h2 { margin-top: 50px; }
+    h3 { margin-top: 25px; }
+    pre { font-size: 12px; background: #E5F3C8; padding:5px 10px; border: 1px solid #D3EAA4; }
+    dd { color: #333; font-style: italic; }
+</style>
+</head>
+<body>
+
+
+<h1>Tube Skin Retina for JW7</h1>
+
+<h2>Features</h2>
+
+<ul>
+  <li>Skin for JW Player 7 that is the most popular video player on the web, live on over 2 million sites</li>
+  <li>Skin with Flat Style</li>
+  <li>Retina Ready & Fully Responsive</li>
+  <li>Unlimited colors - any colour you like</li>
+  <li>8 Different Demos</li>
+  <li>HTML5 & CSS3</li>
+  <li>Support and updates</li>
+  <li>Wishlist Support</li>
+  <li>SVG files included and Well Documented</li>
+</ul>
+
+<p><img alt="Tablet Player" src="assets/preview.jpg" style="margin-left: 10px" /></p>
+
+
+<h2>Configuration Options</h2>
+
+<p>This skin can be build on JW Player 7 or added to your player embeds. After upload it to your webserver, simply set the <b>skin</b> configuration option to the path where you uploaded the XML file.</p>
+
+<b>1. Include the style on the page</b>
+<pre>
+&lt;link rel="stylesheet" type="text/css" href="//yoursite.com/yourstyles/tube.min.css&gt;
+&lt;script type="text/javascript" src="./jwplayer/jwplayer.js" &gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;jwplayer.key="YOUR_JW_PLAYER_KEY";&lt;/script&gt;
+</pre>
+and
+<pre>
+jwplayer('player_example').setup({
+    width: 640,
+    height: 360,
+    file: "/uploads/example.mp4",
+    image: "/uploads/example.jpg",
+    skin : {
+        name:"tube"
+    }
+});
+</pre>
+<br>
+<b>2. You can also have the player load the skin</b><br>
+but this is not recommended as it will reduce performance by increasing load time.
+<pre>
+<del>&lt;link rel="stylesheet" type="text/css" href="//yoursite.com/yourstyles/tube.min.css&gt;</del>
+&lt;script type="text/javascript" src="./jwplayer/jwplayer.js" &gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;jwplayer.key="YOUR_JW_PLAYER_KEY";&lt;/script&gt;
+</pre>
+<pre>
+jwplayer('player_example').setup({
+    width: 640,
+    height: 360,
+    file: "/uploads/example.mp4",
+    image: "/uploads/example.jpg",
+    skin : {
+        url:"//yoursite.com/yourstyles/tube.min.css",
+        name:"tube"
+    }
+});
+</pre>
+
+<h2>Setting Custom Colors</h2>
+Once you've chosen a skin to use with your player, it is possible to further customize the skin by setting up to three colors in the JW Player configuration:
+<dl>
+<dt><b>skin.active</b></dt>
+<dd>    Active skin elements. This includes active and highlighted labels, as well scrubber time that has elapsed.
+</dd>
+<dt><b>skin.inactive</b></dt>
+<dd>    Skin elements that are <b>not</b> active. This includes scrubber time that has not yet elapsed.
+</dd>
+</dl>
+
+
+<h2>Reference</h2>
+<ul>
+  <li>JW Player 7 <a href="http://support.jwplayer.com/" target="_blank">support</a></li>
+  <li>Learn more about <a href="http://support.jwplayer.com/customer/portal/articles/1406968-using-jw-player-skins" target="_blank">Using JW Player Skins</a></li>
+  <li>Learn more about <a href="https://github.com/jwplayer/jwplayer/wiki/3.0-CSS-Skinning-Guide" target="_blank">CSS Skinning Guide</a></li>
+  <li>Learn more about <a href="https://developer.jwplayer.com/jw-player/docs/developer-guide/customization/css-skinning/skins_creating/" target="_blank">Building JW Player Skins</a></li>
+  <li>Learn more about <a href="https://developer.jwplayer.com/jw-player/docs/developer-guide/customization/css-skinning/skins_reference/" target="_blank">Skin CSS Classes Reference</a></li>
+  <li>Learn more about <a href="https://developer.jwplayer.com/jw-player/docs/developer-guide/customization/css-skinning/skins_example/" target="_blank">Sample CSS File</a></li>
+  <li><a href="https://github.com/jwplayer/jwplayer/wiki/3.2-Font-Generation-Using-SVG-Files" target="_blank">Icons font generator</a> using SVG files</li>
+  <li><a href="https://developer.jwplayer.com/jw-player/docs/developer-guide/customization/css-skinning/skins_fonts/" target="_blank"><b>Creating icons font</b></a> for JW Player Skins</li>
+  <li><a href="http://pxtoem.com" target="_blank">PX to EM</a> conversion made simple</li>
+  <li>Online <a href="http://cssshrink.com" target="_blank">CSS Minifier/Compressor</a></li>
+  <li>JW Player <a href="http://www.jwplayer.com/innovation/" target="_blank">Innovation</a>: Research, Roadmap, Experiments</li>
+  <li>JW Player <a href="https://github.com/jwplayer/jwplayer/releases" target="_blank">Source Code</a></li>
+  <li>How to <a href="https://github.com/jwplayer/jwplayer/blob/master/README.md" target="_blank">build</a> JW Player from source</li>
+  <li><a href="https://support.jwplayer.com/customer/portal/articles/1403679-crossdomain-file-loading" target="_blank">Crossdomain</a> File Loading</li>
+</ul>
+
+
+<h2>Changelog</h2>
+<ul>
+<li>Version v1.2.3, support JW 7.11.0 - 12 May 2017.</li>
+<li>Version v1.0.2, Fixbug for TimeTooltip too Tall - 29 December 2016.</li>
+<li>Support JW 7.7.1 and Icons by Base64 - 14 October 2016.</li>
+<li>Launch: The launch of the Tube Skin Retina for JW7 project - 30 September 2016.</li>
+</ul>
+
+
+<h2>Other Skins</h2>
+<ul>
+  <li>Skin for VideoJS 5: <a href="http://codecanyon.net/item/flat-skin-retina-for-videojs-5/14291168?ref=FaceTheme" target="_blank">Flat</a>, <a href="http://codecanyon.net/item/tube-skin-retina-for-videojs/17661814?ref=FaceTheme" target="_blank">Tube</a></li>
+  <li>Skin for VideoJS 4: <a href="http://codecanyon.net/item/flat-skin-retina-for-videojs-4/12996945?ref=FaceTheme" target="_blank">Flat</a></li>
+  <li>Skins for JW7: <a href="http://codecanyon.net/item/flat-skin-retina-for-jw7/12752001?ref=FaceTheme" target="_blank">Flat</a>, Long Shadow, AIR, <a href="http://codecanyon.net/item/thin-skin-retina-for-jw7/13834750?ref=FaceTheme" target="_blank">Thin</a> Skins</li>
+  <li>Skins for JW6: <a href="http://codecanyon.net/item/vskin-for-jw6/14584027?ref=FaceTheme" target="_blank">vSkin</a>, <a href="https://github.com/mrwii/mockup-skin-for-jw6" target="_blank">Mockup</a> <strong>free</strong>, Long Shadow, Gloss, <a href="http://codecanyon.net/item/air-skin-for-jw6/15106240?ref=FaceTheme" target="_blank">AIR</a> Skins</li>
+</ul>
+
+
+<h2>Support</h2>
+
+<p>If you have any questions that are not answered in this userguide, or any bugs to report, please contact me via email through my CodeCanyon profile. Contacting through CodeCanyon will prove that you purchased the file.</p>
+
+<p><a href="http://codecanyon.net/user/facetheme" target="_blank">http://codecanyon.net/user/facetheme</a></p>
+
+
+</body>
+</html>

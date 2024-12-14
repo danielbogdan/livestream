@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tube Skin Retina for JW7</title>
+	<link href="./skins/tube-base64.min.css" rel="stylesheet" type="text/css" />
+	<style>
+		/* Debug and Fixbug for v1.0.1 TimeTooltip too Tall */
+		/*.jw-skin-tube .jw-tooltip-time {
+			background-color: red;
+		}
+		.jw-skin-tube .jw-slider-time.jw-slider-horizontal .jw-slider-container {
+			background-color: blue !important;
+		}*/
+	</style>
+</head>
+
+<body style="background-color: #d2d1d0;">
+<center class="player-wrapper">
+	<div id="my_video"></div>
+</center>
+
+<script type="text/javascript" src="./jwplayer-7.11.0/jwplayer.js"></script>
+<script type="text/javascript">
+	//Note: JW Player 7 now requires a license key. Please make sure to include this on your page if you are self-hosting.
+	jwplayer.key = "Ywok59g9j93GtuSU7+axNzjIp/TBfiK4s0vvYg==";
+	jwplayer('my_video').setup({
+		file: 'http://content.jwplatform.com/videos/IMUjQRAB-kNspJqnJ.mp4',
+		image:'http://assets-jpcust.jwpsrv.com/thumbs/F5K02Tmh-720.jpg',
+		width: '640',
+		height: 360,
+		//autostart: true,
+		skin: {
+			name: "tube"
+		},
+		timeSliderAbove: true,
+		//Adding your brand: Logo & Right-click
+		logo: {
+			file: './jw-logo/logo_tube.png',
+			link: 'http://codecanyon.net/user/facetheme'
+		},
+		abouttext: "Tube Skin Retina for JW7",
+		aboutlink: "http://codecanyon.net/user/facetheme",
+	});
+</script>
+
+</body>
+</html>

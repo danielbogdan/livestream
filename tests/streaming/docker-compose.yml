@@ -1,0 +1,40 @@
+services:
+  rtmp-server:
+    build:
+      context: ../rtmp-server
+    container_name: rtmp-server
+    ports:
+      - "1935:1935"
+      - "8080:8080"
+    volumes:
+      - ./shared-data:/mnt/shared-data
+      - ./video:/mnt/livestream
+      - ./errors:/mnt/status
+    networks:
+      - shared-network
+    env_file: 
+      - .env
+
+  api:
+    build:
+      context: ./api
+    container_name: api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./shared-data:/mnt/shared-data
+      - ./api/api.php:/var/www/html/api.php
+      - /var/run/docker.sock:/var/run/docker.sock # Mount Docker socket
+    networks:
+      - shared-network
+    depends_on:
+      - rtmp-server
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock # Configure Docker Host
+    user: root
+#   command: >
+#     sh -c "chmod 666 /var/run/docker.sock"
+
+networks:
+  shared-network:
+    external: true

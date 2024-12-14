@@ -1,0 +1,46 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: frontend-app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./app:/var/www/html
+      - ./certs:/etc/ssl/private
+      - ./apache-conf/ssl.conf:/etc/apache2/sites-available/ssl.conf
+      - ./logs:/var/log
+      - ./php.ini:/usr/local/etc/php/php.ini
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_DATABASE=live
+      - MYSQL_USER=live
+      - MYSQL_PASSWORD=Magpass@99!
+    depends_on:
+      - db
+    restart: always
+    networks:
+      - shared-network
+
+  db:
+    image: mariadb:10.3
+    container_name: frontend-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: live
+      MYSQL_USER: live
+      MYSQL_PASSWORD: Magpass@99!
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    restart: always
+    networks:
+      - shared-network
+
+networks:
+  shared-network:
+    external: true

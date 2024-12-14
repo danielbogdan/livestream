@@ -1,0 +1,220 @@
+<html><head>
+        <title>BLC broadcast manager</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="apple-touch-startup-image" href="lib/durandal/img/ios-startup-image-landscape.png" media="(orientation:landscape)">
+        <link rel="apple-touch-startup-image" href="lib/durandal/img/ios-startup-image-portrait.png" media="(orientation:portrait)">
+        <link rel="apple-touch-icon" href="lib/durandal/img/icon.png">
+
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ie10mobile.css">
+        <link rel="stylesheet" href="lib/durandal/css/durandal.css">
+        <link rel="stylesheet" href="css/starterkit.css">
+        <link type="text/css" rel="stylesheet" href="lib/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css" media="screen">
+
+
+        <script src="https://connect.facebook.net/en_US/sdk.js?hash=0a81a1325676d201938dbe2c45c8d1c2" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script type="text/javascript">
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement("style");
+                var mq = "@@-ms-viewport{width:auto!important}";
+                msViewportStyle.appendChild(document.createTextNode(mq));
+                document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+            }
+        </script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="app/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/system" src="app/../lib/durandal/js/system.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/app" src="app/../lib/durandal/js/app.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/viewLocator" src="app/../lib/durandal/js/viewLocator.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="services/utils" src="app/services/utils.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/viewEngine" src="app/../lib/durandal/js/viewEngine.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/composition" src="app/../lib/durandal/js/composition.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/events" src="app/../lib/durandal/js/events.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="app/../lib/jquery/jquery-1.9.1.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/binder" src="app/../lib/durandal/js/binder.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="durandal/activator" src="app/../lib/durandal/js/activator.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="knockout" src="app/../lib/knockout/knockout-3.2.0.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="plugins/router" src="app/../lib/durandal/js/plugins/router.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="plugins/dialog" src="app/../lib/durandal/js/plugins/dialog.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="plugins/history" src="app/../lib/durandal/js/plugins/history.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="viewmodels/shell" src="app/viewmodels/shell.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="text" src="app/../lib/require/text.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="viewmodels/connector" src="app/viewmodels/connector.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="services/connectorManager" src="app/services/connectorManager.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="viewmodels/optionSelectorModal" src="app/viewmodels/optionSelectorModal.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="kodirty" src="app/../lib/knockout/knockout.dirty-flag.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="komapping" src="app/../lib/knockout/knockout.mapping-latest.js?v=1645477573011"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="transitions/entrance" src="app/../lib/durandal/js/transitions/entrance.js?v=1645477573011"></script><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+    <body>
+        <div id="applicationHost"><div data-view="views/shell" style="" data-active-view="true" class="">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <i class="fa fa-home"></i>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" data-bind="foreach: router.navigationModel">
+                <li data-bind="css: { active: isActive }" class="">
+                    <a data-bind="attr: { href: hash }, text: title" href="#connector">Connector</a>
+                </li>
+            
+                <li data-bind="css: { active: isActive }" class="">
+                    <a data-bind="attr: { href: hash }, text: title" href="#preview">Channel preview</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="loader" data-bind="css: { active: router.isNavigating }">
+                    <i class="fa fa-spinner fa-spin fa-2x"></i>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-host" data-bind="router: { transition:'entrance' }"><section data-view="views/connector" style="" data-active-view="true" class="">
+<div class="row">
+	<div class="col-lg-12 col-lg-6" data-bind="css: { 'col-lg-6': youtubeEnabled }">
+		<h3 class="col-sm-6">
+			Stream to Facebook
+			<button type="button" class="btn btn-success btn-sm" data-bind="click: facebookSaveSettings, visible: facebookSettingsDirty" style="display: none;">Save settings</button>
+		</h3>
+
+		<div class="col-sm-6 text-right">
+			<h3>Status: <span class="label label-danger" data-bind="text: status().text, css: status().class">OFFLINE</span>
+				<button type="button" class="btn btn-success btn-sm" data-bind="click: startFacebookConnector, visible: isStartAvailable, enable: !facebookSettingsDirty() &amp;&amp; ((facebookSettings().settings.server().length &amp;&amp; facebookSettings().settings.key().length &amp;&amp; facebookSettings().settings.mode() == modes.MANUAL) || (facebookSettings().page.id() &amp;&amp; facebookSettings().settings.mode() == modes.AUTO))">Start</button>
+				<button type="button" class="btn btn-danger btn-sm" data-bind="click: stopFacebookConnector, visible: isStopAvailable" style="display: none;">Stop</button>
+			</h3>
+		</div>
+
+		<!--<label for="fb-connector-mode" class="control-label input-group">Mode:</label>-->
+		<div class="panel panel-default">
+			<div class="radio clear">
+				<label><input type="radio" name="fb-connector-mode" value="0" data-bind="checked: facebookSettings().settings.mode, checkedValue: modes.AUTO">Linked (API)</label>
+					<!--<span class="label label-warning">This method may no longer work at some point due to new Facebook policy. If in trouble, use Server and stream key method below until a workaround is available</span>-->
+
+			</div>
+			<div class="radio-section" data-bind="css: { 'disabled': facebookSettings().settings.mode() != modes.AUTO }">
+				<blockquote>Use the Facebook log in button to (re)associate your streaming channel with your Facebook page. Make
+					sure you use the right Facebook account.</blockquote>
+
+				<h4>Status: <span class="label label-success" data-bind="html: facebookStatus().text, css: facebookStatus().class">Linked to <a href="https://facebook.com/500029230017774" target="_blank">Tineret Poarta Cerului</a></span>
+					<button type="button" class="btn btn-danger btn-xs" data-bind="click: unlinkFacebookPage, visible: facebookStatus().linked">Unlink</button>
+					<div class="fb-login-button fb_iframe_widget" data-max-rows="1" data-size="medium" data-auto-logout-link="false" data-scope="pages_manage_posts, pages_read_engagement" data-default-audience="everyone" login_text="" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=1201887399870758&amp;auto_logout_link=false&amp;container_width=878&amp;default_audience=everyone&amp;locale=en_US&amp;login_text=&amp;max_rows=1&amp;scope=pages_manage_posts%2C%20pages_read_engagement&amp;sdk=joey&amp;size=medium"><span style="vertical-align: bottom; width: 64px; height: 22px;"><iframe name="f2ba17b97708608" width="1000px" height="1000px" data-testid="fb:login_button Facebook Social Plugin" title="fb:login_button Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v4.0/plugins/login_button.php?app_id=1201887399870758&amp;auto_logout_link=false&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3ded552b002ab8%26domain%3Dbroadcast.bisericilive.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fbroadcast.bisericilive.com%252Ff1df47dbb53702%26relation%3Dparent.parent&amp;container_width=878&amp;default_audience=everyone&amp;locale=en_US&amp;login_text=&amp;max_rows=1&amp;scope=pages_manage_posts%2C%20pages_read_engagement&amp;sdk=joey&amp;size=medium" style="border: none; visibility: visible; width: 64px; height: 22px;" class=""></iframe></span></div>
+				</h4>
+
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="fbDefaultTitle" class="col-sm-2 control-label">Default title</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="fbDefaultTitle" data-bind="value: facebookSettings().settings.title, valueUpdate: 'keyup'" placeholder="Default title. Use %DATE% for 'Joi, 13 mai 2016' and %TIME% for '17:56'">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="fbDefaultDescription" class="col-sm-2 control-label">Default description</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="fbDefaultDescription" data-bind="value: facebookSettings().settings.description, valueUpdate: 'keyup'" placeholder="Default description. Use %DATE% for 'Joi, 13 mai 2016' and %TIME% for '17:56'">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="checkbox">
+								<label>
+			<input type="checkbox" id="fbAutoPublish" data-bind="checked: facebookSettings().settings.publish, enable: false" disabled=""> Also publish the video on start
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" title="Otherwise, manual publishing from Facebook after broadcast start is required"></span>
+		  </label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<div class="checkbox">
+								<label>
+			<input type="checkbox" id="fbNoDVR" data-bind="checked: facebookSettings().settings.dvr"> Enable DVR (on Facebook)
+		  </label>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+								<div class="radio">
+				<label><input type="radio" name="fb-connector-mode" value="1" data-bind="checked: facebookSettings().settings.mode, checkedValue: modes.MANUAL">Server and stream key (manually add Live video on Facebook and Go Live)</label>
+			</div>
+			<div class="radio-section disabled" data-bind="css: { 'disabled': facebookSettings().settings.mode() != modes.MANUAL }">
+				<blockquote>Paste the server and stream keys (add a new live video in Facebook), save settings and start streaming.<br>
+				<b>Persistent stream keys are recommended</b> to avoid configuring this each time.</blockquote>
+
+				<!--<div class="input-group input-group-sm">
+					<span class="input-group-addon">Facebook stream URL</span>
+					<input type="text" class="form-control" data-bind="value: facebookURL, valueUpdate: 'keyup'">
+				</div>-->
+				
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">Facebook server URL</span>
+				<input type="text" class="form-control" data-bind="value: facebookSettings().settings.server, valueUpdate: 'keyup'">
+			</div>
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">Facebook (persistent) stream key</span>
+				<input type="password" class="form-control" data-bind="value: facebookSettings().settings.key, valueUpdate: 'keyup'">
+			</div>
+
+				<!--<p class="alert alert-info"><strong>Warning:</strong> If the streaming is stopped or the connector doesn't start, a new URL must
+					be generated (add a new live video in Facebook).</p>-->
+			</div>
+		
+
+			
+									<div class="form-group">
+							<div class="checkbox">
+								<label>
+			<input type="checkbox" id="fbAutoStart" data-bind="checked: facebookSettings().settings.autostart, enable: isAutoPushAvailable"> Automatically push to Facebook when broadcast starts
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" title="If unchecked you must manually press 'Start' during the broadcast"></span>
+		  </label>
+							</div>
+					</div>
+
+		</div>
+	</div>
+
+	<div class="col-lg-6" data-bind="visible: youtubeEnabled">
+		<h3 class="col-sm-6">
+			Stream to YouTube
+			<button type="button" class="btn btn-success btn-sm" data-bind="click: youtubeSaveSettings, visible: youtubeSettingsDirty" style="display: none;">Save settings</button>
+		</h3>
+
+		<div class="col-sm-6 text-right">
+			<h3>Status: <span class="label label-danger" data-bind="text: youtubeStatus().text, css: youtubeStatus().class">OFFLINE</span>
+				<button type="button" class="btn btn-success btn-sm" data-bind="click: startYoutubeConnector, visible: isYoutubeStartAvailable, enable: !youtubeSettingsDirty() &amp;&amp; youtubeSettings().settings.server().length &amp;&amp; youtubeSettings().settings.key().length">Start</button>
+				<button type="button" class="btn btn-danger btn-sm" data-bind="click: stopYoutubeConnector, visible: isYoutubeStopAvailable" style="display: none;">Stop</button>
+			</h3>
+		</div>
+
+		<div class="panel panel-default">
+			<blockquote class="clear">Paste the stream name/key, check server URL (find them in your <a href="https://www.youtube.com/live_dashboard" target="_blank">dashboard</a>), save settings
+				and start streaming. For statistics, please also paste your channel ID (find it in your <a href="https://www.youtube.com/account_advanced" target="_blank">advanced account information</a>).</blockquote>
+
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">YouTube server URL</span>
+				<input type="text" class="form-control" data-bind="value: youtubeSettings().settings.server, valueUpdate: 'keyup'">
+			</div>
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">YouTube stream name/key</span>
+				<input type="password" class="form-control" data-bind="value: youtubeSettings().settings.key, valueUpdate: 'keyup'">
+			</div>
+			<div class="input-group input-group-sm">
+				<span class="input-group-addon">YouTube channel ID</span>
+				<input type="text" class="form-control" data-bind="value: youtubeSettings().settings.cid, valueUpdate: 'keyup'">
+			</div>
+			<div class="form-group">
+				<div class="checkbox">
+					<label>
+			<input type="checkbox" id="ytAutoStart" data-bind="checked: youtubeSettings().settings.autostart, enable: isAutoPushAvailable"> Automatically push to YouTube when broadcast starts
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true" title="If unchecked you must manually press 'Start' during the broadcast"></span>
+		  </label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section></div>
+</div></div>
+
+        <script src="lib/require/require.js" data-main="app/main"></script>
+    
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div></body></html>
