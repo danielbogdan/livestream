@@ -115,9 +115,9 @@ project-root/
 curl -X POST -d "action=start_service&name=johndoe&service=hls" http://api:8000/api.php
 ```
 
-![API Postman start] (./frontend-app/images/api_start.png)
+![API Postman star](frontend-app/images/api_start.png)
 
-![API Postman stop] (./frontend-app/images/api_stop.png)
+![API Postman stop](frontend-app/images/api_stop.png)
 
 ## Security Considerations
 
